@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<books>
+    <book ISBN="ISBN-001">
+        <name>How To Be A Cat</name>
+        <author>Tom</author>
+        <price>$29</price>
+    </book>
+    <book ISBN="ISBN-002">
+        <name>How To Be A Mouse</name>
+        <author>Jerry</author>
+        <price>$25</price>
+    </book>
+</books>

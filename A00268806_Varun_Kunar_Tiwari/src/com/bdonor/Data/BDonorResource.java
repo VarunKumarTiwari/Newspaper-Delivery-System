@@ -15,15 +15,17 @@ public class BDonorResource {
 	@GET
 	@Produces({ MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON, MediaType.TEXT_XML })
 	public List<Data>getBooks(){
-		return BDonorDao.INSTANCE.getBooks();
+		//List<Data> bb = BDonorDao.INSTANCE.getBooks();
+		//System.out.println(bb.get(1));
+		return BDonorDao.INSTANCE.getAllDonor();
 	}
-/*	
+	
 	@GET
 	@Produces({ MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON, MediaType.TEXT_XML})
 	@Path("{bookId}")
 	public Data getBook(@PathParam("bookId") String id){
-		return BDonorDao.INSTANCE.getBook(Integer.parseInt(id));
-	}*/
+		return BDonorDao.INSTANCE.getDonor(Integer.parseInt(id));
+	}
 	
 /*	@POST
 	@Produces({ MediaType.TEXT_HTML })

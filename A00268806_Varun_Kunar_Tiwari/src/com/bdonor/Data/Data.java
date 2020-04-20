@@ -51,7 +51,12 @@ public class Data {
 		this.age = age;
 	}
 
-	public Data(int id,String name, String bgroup, String gender, int age) {
+	@Override
+	public String toString() {
+		return "Data [id=" + id + ", name=" + name + ", bgroup=" + bgroup + ", gender=" + gender + ", age=" + age + "]";
+	}
+
+/*	public Data(int id,String name, String bgroup, String gender, int age) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -59,7 +64,7 @@ public class Data {
 		this.gender = gender;
 		this.age = age;
 	}
-	
+	*/
 	
 	
 	

@@ -192,7 +192,12 @@ public class BloodDonor {
 				String Gender =  gender.getSelectedItem().toString();
 				Integer Age = Integer.parseInt(age.getText());
 				
-				Data data = new Data(Id,Name,Bgroup,Gender,Age);
+				Data data = new Data();
+				data.setId(Id);
+				data.setName(Name);
+				data.setBgroup(Bgroup);
+				data.setGender(Gender);
+				data.setAge(Age);
 				BDonorDao.INSTANCE.create(data);
 				
 				

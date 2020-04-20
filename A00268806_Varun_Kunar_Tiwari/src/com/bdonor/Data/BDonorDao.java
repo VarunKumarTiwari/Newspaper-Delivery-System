@@ -29,19 +29,19 @@ public enum BDonorDao {
 		booksMap.put(2, book2);
 	}*/
 	
-/*	public List<Data> getBooks() {
+	public List<Data> getAllDonor() {
 		System.out.println("getall");
-		List<Data> books = DBConnection.selectAllBooks();
+		List<Data> books = DBConnection.selectAllDonor();
 	//	books.addAll(booksMap.values());
 		return books;
 	}
 	
-	public Data getBook(int id) {
+	public Data getDonor(int id) {
 		//return booksMap.get(id);
 		System.out.println("get");
-		return DBConnection.selectBook(id);
+		return DBConnection.selectDonor(id);
 	}
-	*/
+	
 	public void create(Data book) {
 		//booksMap.put(book.getId(), book);
 		System.out.println("create");

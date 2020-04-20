@@ -100,27 +100,26 @@ public class DBConnection {
 	
 		
 	}
+	*/
 	
-	
-	public static Data selectBook(int id) {
+	public static Data selectDonor(int id) {
 		Data bk = new Data(); 
 		try {
-			Class.forName("org.hsqldb.jdbcDriver");
+			Connection conn = getConnection() ;
 			
-			Connection conn = DriverManager.getConnection("jdbc:hsqldb:hsql://localhost/oneDB", "SA", "Passw0rd");
-	
 			Statement stmt = conn.createStatement();
 			System.out.println("in select");
-			String sql = "SELECT * from Book where id = '" + id +"'";
+			String sql = "SELECT * from BDONOR where Autoid = '" + id +"'";
 			ResultSet rs = stmt.executeQuery(sql);
 			System.out.println(sql);
 			
 			if (rs.next()) {
 			 
-				bk.setId(Integer.parseInt(rs.getString("id")));
-				bk.setAuthor(rs.getString("author"));
-				bk.setTitle(rs.getString("title"));
-				bk.setYear(Integer.parseInt(rs.getString("year")));
+				bk.setId(Integer.parseInt(rs.getString("AUTOID")));
+				bk.setName(rs.getString("NAME"));
+				bk.setBgroup(rs.getString("BGROUP"));
+				bk.setGender(rs.getString("GENDER"));
+				bk.setAge(Integer.parseInt(rs.getString("AGE")));
 					
 			} 
 			 
@@ -140,7 +139,7 @@ public class DBConnection {
 	
 		
 	}
-*/
+
 	public static List<Data> selectAllDonor() {
 		// TODO Auto-generated method stub
 		List<Data> books= new ArrayList<Data>();
@@ -156,9 +155,15 @@ public class DBConnection {
 			System.out.println(sql);
 			
 			while (rs.next()) {
-				Data bk = new Data(rs.getInt("AUTOID"), rs.getString("NAME"), rs.getString("BGROUP"), rs.getString("GENDER"), rs.getInt("AGE"));
-				
+			//	Data bk = new Data(rs.getInt("AUTOID"), rs.getString("NAME"), rs.getString("BGROUP"), rs.getString("GENDER"), rs.getInt("AGE"));
+				Data bk = new Data();
+				bk.setId(Integer.parseInt(rs.getString("AUTOID")));
+				bk.setName(rs.getString("NAME"));
+				bk.setBgroup(rs.getString("BGROUP"));
+				bk.setGender(rs.getString("GENDER"));
+				bk.setAge(Integer.parseInt(rs.getString("AGE")));
 				books.add(bk);	
+				//books.add(bk);	
 			} 
 			 
 			stmt.close();
